@@ -3,18 +3,18 @@ pipeline {
     stages {
         stage('Init') {
             steps {
-                sh 'terraform init'
+                bat 'terraform init'
             }
         }
         stage('Plan') {
             steps {
-                sh 'terraform plan'
+                bat 'terraform plan'
             }
         }
         stage('Apply') {
             steps {
                 input 'Apply the changes?'
-                sh 'terraform apply -auto-approve'
+                bat 'terraform apply -auto-approve'
             }
         }
     }
